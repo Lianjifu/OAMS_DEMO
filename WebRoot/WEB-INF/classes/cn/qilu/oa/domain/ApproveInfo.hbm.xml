@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.qilu.oa.domain">
+
+	<class name="ApproveInfo" table="qilu_approveInfo">
+		<id name="id">
+            <generator class="native"/>
+		</id>
+		<property name="approveTime" type="timestamp"/>
+		<property name="approval"/>
+		<property name="comment"/>
+		
+		<!-- application属性，本类与Application的多对一 -->
+		<many-to-one name="application" class="Application" column="applicationId"></many-to-one>
+
+		<!-- approver属性，本类与User的多对一 -->
+		<many-to-one name="approver" class="User" column="approverId"></many-to-one>
+		
+	</class>
+	
+</hibernate-mapping>

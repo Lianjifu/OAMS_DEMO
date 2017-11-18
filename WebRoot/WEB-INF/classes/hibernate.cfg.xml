@@ -1,0 +1,43 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+
+	<!-- 数据库信息（连接信息写到spring的配置文件中） -->
+	<property name="dialect">
+		org.hibernate.dialect.MySQL5Dialect
+	</property>
+	<!-- <property name="connection.url">jdbc:mysql:///myoa</property> <property 
+		name="connection.driver_class">com.mysql.jdbc.Driver</property> <property 
+		name="connection.username">root</property> <property name="connection.password">123456</property> -->
+
+	<!-- 其他配置 -->
+	<property name="show_sql">true</property>
+	<property name="hbm2ddl.auto">update</property>
+
+
+	<!-- 导入JBPM4.4的映射文件 -->
+	<mapping resource="jbpm.repository.hbm.xml" />
+	<mapping resource="jbpm.execution.hbm.xml" />
+	<mapping resource="jbpm.history.hbm.xml" />
+	<mapping resource="jbpm.task.hbm.xml" />
+	<mapping resource="jbpm.identity.hbm.xml" />
+
+	<!-- 导入映射配置 -->
+	<mapping resource="cn/qilu/oa/domain/User.hbm.xml" />
+	<mapping resource="cn/qilu/oa/domain/Role.hbm.xml" />
+	<mapping resource="cn/qilu/oa/domain/Privilege.hbm.xml" />
+	<mapping resource="cn/qilu/oa/domain/Department.hbm.xml" />
+	<mapping resource="cn/qilu/oa/domain/Forum.hbm.xml" />
+	<mapping resource="cn/qilu/oa/domain/Reply.hbm.xml" />
+	<mapping resource="cn/qilu/oa/domain/Topic.hbm.xml" />
+	<mapping resource="cn/qilu/oa/domain/Application.hbm.xml" />
+	<mapping resource="cn/qilu/oa/domain/ApplicationTemplate.hbm.xml" />
+	<mapping resource="cn/qilu/oa/domain/ApproveInfo.hbm.xml" />
+
+
+
+</session-factory>
+</hibernate-configuration>

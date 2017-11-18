@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.qilu.oa.domain">
+
+	<class name="Application" table="qilu_application">
+		<id name="id">
+			<generator class="native" />
+		</id>
+		<property name="title" />
+		<property name="applyTime" type="timestamp"/>
+		<property name="path" />
+		<property name="status" />
+
+		<!-- applicationTemplate属性，本类与ApplicationTemplate的多对一 -->
+		<many-to-one name="applicationTemplate" class="ApplicationTemplate" column="applicationTemplateId"></many-to-one>
+
+		<!-- approveInfos属性，本类与ApproveInfo的一对多 -->
+		<set name="approveInfos" order-by="approveTime ASC">
+			<key column="applicationId"></key>
+			<one-to-many class="ApproveInfo"/>
+		</set>
+
+		<!-- applicant属性，本类与User的多对一 -->
+		<many-to-one name="applicant" class="User" column="applicantId"></many-to-one>
+
+	</class>
+
+</hibernate-mapping>

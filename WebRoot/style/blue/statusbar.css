@@ -1,0 +1,59 @@
+A:link {
+	COLOR: #00ffcc; TEXT-DECORATION: none
+}
+
+A:visited {
+	COLOR: #a9dcff; TEXT-DECORATION: none
+}
+
+A:active {
+	COLOR: #a9dcff; TEXT-DECORATION: none
+}
+
+A:hover {
+	COLOR: #a9dcff; TEXT-DECORATION: none;
+}
+
+#StatusBar {
+	width: 100%;
+	height: 19px;
+	border-top: 1px solid #ffffff;
+	filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#3d7aa7,endcolorstr=#4891c6,gradientType=0);
+	background-color: #000033;
+}
+
+#Online {
+	padding-left: 20px;
+	padding-top: 3px;
+	color: #00ffcc;
+	font-family: "宋体";
+	font-size: 12px;
+	float: left;
+}
+
+.OnlineUser {
+	color: #00ffcc;
+	font-family: "宋体";
+	font-size: 12px;
+	font-weight:bold;
+}
+
+.OnlineView {
+	padding-left: 25px;
+	color: #00ffcc;
+	font-family: "宋体";
+	font-size: 12px;
+}
+
+
+
+#Version {
+	padding-right: 50px;
+	padding-top: 3px;
+	color: #00ffcc;
+	font-family: "宋体";
+	font-size: 12px;
+	float: right;
+}
+
+
